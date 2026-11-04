@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garden Planner BD — Home Vegetable Garden Planner</title>
+<meta name="description" content="Offline bilingual home vegetable garden planner for Bangladesh: garden beds, sowing calendar and care log.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1 id="title">Garden Planner BD</h1>
+    <p id="tagline" class="muted">Plan your home vegetable garden — beds, seasons and care in one place.</p>
+  </div>
+  <button id="langBtn" class="btn">বাংলা</button>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button data-tabbtn="tabGarden" class="active">My Garden</button>
+  <button data-tabbtn="tabCrops">Crops</button>
+  <button data-tabbtn="tabCalendar">Calendar</button>
+  <button data-tabbtn="tabCare">Care Log</button>
+  <button data-tabbtn="tabData">Data</button>
+</nav>
+
+<p id="msg" class="msg" role="status"></p>
+
+<main>
+<section id="tab-garden" class="tab active">
+  <h2 id="gardenH">My garden beds</h2>
+  <p id="gardenP" class="muted">Tap a plot to plant or manage it. Each bed holds 24 plots.</p>
+  <div class="stats">
+    <div class="stat" id="statPlanted">0 Planted</div>
+    <div class="stat" id="statReady">0 Ready to harvest</div>
+    <div class="stat" id="statGrowing">0 Growing</div>
+    <div class="stat" id="statFree">24 Free plots</div>
+  </div>
+  <div id="bedGrid" class="grid" aria-label="Garden bed plots"></div>
+  <div class="panel">
+    <h3 id="plantPickerH">Plant in the selected plot</h3>
+    <label><span id="plantDateL">Planting date</span>
+      <input type="date" id="plantDate">
+    </label>
+    <label>Crop
+      <select id="cropSel"><option value="">—</option></select>
+    </label>
+    <button id="plantBtn" class="btn primary">Plant here</button>
+    <p id="plantErr" class="err" role="alert"></p>
+    <div id="plotPanel"></div>
+  </div>
+  <h3 id="harvestedH">Harvest history</h3>
+  <div id="harvestedList"></div>
+</section>
+
+<section id="tab-crops" class="tab">
+  <h2 id="cropsH">Vegetable library</h2>
+  <p id="cropsP" class="muted">18 common Bangladeshi home-garden vegetables with sowing months and harvest time.</p>
+  <div id="cropList" class="cards"></div>
+</section>
+
+<section id="tab-calendar" class="tab">
+  <h2 id="calH">What to sow</h2>
+  <p id="calP" class="muted">Pick a month to see which vegetables can be sown in Bangladesh that month.</p>
+  <label>Month <select id="calMonth"></select></label>
+  <h3 id="calTitle"></h3>
+  <div id="calList" class="cards"></div>
+</section>
+
+<section id="tab-care" class="tab">
+  <h2 id="careH">Care log</h2>
+  <p id="careP" class="muted">Record watering, fertilizing, weeding and pest checks.</p>
+  <div class="panel">
+    <label><span id="careTypeL">Care type</span>
+      <select id="careType"><option value="">—</option></select>
+    </label>
+    <label>Date <input type="date" id="careDate"></label>
+    <label><span id="careNoteL">Note (optional)</span>
+      <input type="text" id="careNote" maxlength="120" placeholder="">
+    </label>
+    <button id="careAdd" class="btn primary">Add entry</button>
+    <p id="careErr" class="err" role="alert"></p>
+  </div>
+  <div id="careList"></div>
+</section>
+
+<section id="tab-data" class="tab">
+  <h2 id="dataH">Your data</h2>
+  <p id="dataP" class="muted">Everything is stored only in this browser. Export a backup file before clearing.</p>
+  <div class="panel">
+    <button id="exportBtn" class="btn primary">Export JSON</button>
+    <label class="btn" for="importFile"><span id="importBtn">Import JSON</span></label>
+    <input type="file" id="importFile" accept="application/json" hidden>
+    <button id="eraseBtn" class="btn danger">Erase all data</button>
+  </div>
+</section>
+</main>
+
+<footer><p id="disclaimer" class="muted small">A home-garden planning aid, not agricultural advice. Sowing months are typical for Bangladesh and vary with local weather.</p></footer>
+
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;margin:0 auto;max-width:860px;padding:12px;color:#1d2b1d;background:#f7faf4}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+h1{margin:8px 0 4px;color:#2c5a1e}h2,h3{color:#2c5a1e}
+.muted{color:#5a6b58}.small{font-size:.85em}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.tabs button{border:1px solid #9dbb8f;background:#fff;padding:8px 12px;border-radius:20px;cursor:pointer}
+.tabs button.active{background:#2c5a1e;color:#fff;border-color:#2c5a1e}
+.tab{display:none}.tab.active{display:block}
+.btn{border:1px solid #9dbb8f;background:#fff;padding:8px 14px;border-radius:8px;cursor:pointer}
+.btn.primary{background:#2c5a1e;color:#fff;border-color:#2c5a1e}
+.btn.danger{color:#a33;border-color:#d99}.btn.small{padding:2px 8px}
+.msg{min-height:1.2em;color:#2c5a1e;font-weight:600}.err{color:#a33;min-height:1.2em}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.stat{background:#e7f0dd;border:1px solid #cfe0c2;padding:8px 12px;border-radius:10px;font-size:.9em}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:12px 0}
+.plot{aspect-ratio:1;border:2px solid #b8cfa9;background:#fdf8e7;border-radius:10px;cursor:pointer;font-size:.8em;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:2px}
+.plot.empty{color:#7a8a76}.plot.sel{outline:3px solid #2c5a1e}.plot.ready{background:#ffe9a8;border-color:#d9a400}
+.plot span{font-size:.78em;line-height:1.1}.plot small{color:#5a6b58}
+.panel{border:1px solid #d5e2cb;background:#fff;padding:14px;border-radius:12px;margin:12px 0}
+.panel label{display:block;margin:8px 0}
+.panel input,.panel select{width:100%;padding:8px;margin-top:4px;border:1px solid #c9d6bf;border-radius:8px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+.card{display:flex;gap:10px;border:1px solid #d5e2cb;background:#fff;padding:10px;border-radius:12px}
+.card-emoji{font-size:1.8em}.row{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #e2ead9;padding:8px 0}
+footer{margin-top:24px;border-top:1px solid #d5e2cb;padding-top:8px}
+@media(max-width:480px){.cards{grid-template-columns:1fr}.grid{gap:6px}.plot{font-size:.72em}}
